@@ -88,6 +88,11 @@ body {
   margin-top: 4.5px;
   pointer-events: all;
   position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.thumb::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
 }
 
 .thumb::-moz-range-thumb {
