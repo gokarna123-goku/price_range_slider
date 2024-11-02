@@ -14,15 +14,15 @@ const valueCSS = {
     paddingTop: "10px",
 };
 
-const PriceRangeSlider = ({
+const PriceFilterRange = ({
     min,
     max,
-    trackColor = "#cecece",
+    trackColor = "#1d1d1d",
     onChange,
     rangeColor = "#ff0303",
     valueStyle = valueCSS,
-    width = "300px",
-    currencyText = "$",
+    width = "250px",
+    currencyText = "Rs. ",
 }) => {
 
     const [minVal, setMinVal] = useState(min);
@@ -69,19 +69,19 @@ const PriceRangeSlider = ({
     }, [minVal, maxVal, onChange]);
 
     return (
-        <div className='w-full flex items-center justify-center flex-col space-y-14'>
+        <div className='w-full flex items-center justify-center flex-col space-y-8 pb-5 pt-3'>
 
             {/* Display Price Value */}
-            <div className="w-[300px] px-4 flex items-center justify-between gap-x-5">
+            <div className="w-[250px] px-1 flex items-center justify-between gap-x-5">
 
-                <p className="text-xl text-neutral-100 font-semibold">
-                    {currencyText} {minVal}
+                <p className="text-base text-neutral-600 font-semibold">
+                    <span className="text-sm text-neutral-600 font-normal">{currencyText}</span> {minVal}
                 </p>
 
                 <div className="flex-1 border-dashed border border-neutral-500 mt-1"></div>
 
-                <p className="text-xl text-neutral-100 font-semibold">
-                    {currencyText} {maxVal}
+                <p className="text-base text-neutral-600 font-semibold">
+                    <span className="text-sm text-neutral-600 font-normal">{currencyText}</span> {maxVal}
                 </p>
 
             </div>
@@ -124,15 +124,15 @@ const PriceRangeSlider = ({
 
                 <div className="slider">
                     <div
-                        style={{ backgroundColor: trackColor }}
+                        style={{ border: `1px solid ${rangeColor}` }}
                         className="track-slider"
                     />
 
-                    <div
+                    {/* <div
                         ref={range}
-                        style={{ backgroundColor: rangeColor }}
+                        style={{ backgroundColor: trackColor }}
                         className="range-slider"
-                    />
+                    /> */}
 
                 </div>
 
@@ -142,4 +142,4 @@ const PriceRangeSlider = ({
     )
 }
 
-export default PriceRangeSlider
+export default PriceFilterRange;
