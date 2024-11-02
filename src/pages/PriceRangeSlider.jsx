@@ -74,14 +74,14 @@ const PriceFilterRange = ({
             {/* Display Price Value */}
             <div className="w-[250px] px-1 flex items-center justify-between gap-x-5">
 
-                <p className="text-base text-neutral-600 font-semibold">
-                    <span className="text-sm text-neutral-600 font-normal">{currencyText}</span> {minVal}
+                <p className="text-lg text-neutral-300 font-semibold">
+                    <span className="text-base text-neutral-300 font-normal">{currencyText}</span> {minVal}
                 </p>
 
                 <div className="flex-1 border-dashed border border-neutral-500 mt-1"></div>
 
-                <p className="text-base text-neutral-600 font-semibold">
-                    <span className="text-sm text-neutral-600 font-normal">{currencyText}</span> {maxVal}
+                <p className="text-lg text-neutral-300 font-semibold">
+                    <span className="text-base text-neutral-300 font-normal">{currencyText}</span> {maxVal}
                 </p>
 
             </div>
@@ -125,14 +125,14 @@ const PriceFilterRange = ({
                 <div className="slider">
                     <div
                         style={{ border: `1px solid ${rangeColor}` }}
-                        className="track-slider"
+                        className="track-slider py-0.5"
                     />
 
-                    {/* <div
+                    <div
                         ref={range}
-                        style={{ backgroundColor: trackColor }}
-                        className="range-slider"
-                    /> */}
+                        style={{ backgroundColor: rangeColor }}
+                        className="range-slider py-0.5"
+                    />
 
                 </div>
 
